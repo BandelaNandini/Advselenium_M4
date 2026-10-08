@@ -30,7 +30,6 @@ public class ContactTest extends Baseclass {
 	@Test(groups = "smoke", retryAnalyzer = ListenersUtility.RetryAnalyser.class)
 
 	public void createconTest() throws InterruptedException, IOException {
-		WebDriver driver = UtilityClassObject.getDriver();
 
 		// Fetch the random number
 		JavaUtility jutil = new JavaUtility();

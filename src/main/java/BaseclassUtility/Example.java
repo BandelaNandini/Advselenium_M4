@@ -43,8 +43,8 @@ public class Example {
 	}
 
 	@BeforeClass(alwaysRun = true)
-	public void launchTheBrowser() throws IOException {
-		WebDriver driver;
+	public void launchTheBrowser() throws IOException 
+	{
 		String browser = putil.fetchDataFromPropFile("browser");
 		if (browser.equals("chrome"))
 			driver = new ChromeDriver();
@@ -55,8 +55,6 @@ public class Example {
 		else
 			driver = new ChromeDriver();
 		UtilityClassObject.setDriver(driver);
-		this.driver = UtilityClassObject.getDriver();
-		System.out.println(driver);
 		Reporter.log("Launched browser", true);
 
 	}

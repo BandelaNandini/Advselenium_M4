@@ -19,7 +19,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  *         seleniumlibrary
  */
 public class WebdriverUtility {
-	WebDriver driver = UtilityClassObject.getDriver();
 
 	/**
 	 * This method is used navigate to an application

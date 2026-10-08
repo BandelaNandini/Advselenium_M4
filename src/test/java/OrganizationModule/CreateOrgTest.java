@@ -21,7 +21,6 @@ import POMUtilities.HomePage;
 import POMUtilities.OrgInfoPage;
 import POMUtilities.OrganizationPage;
 
-@Listeners(ListenersUtility.ListenersImp.class)
 public class CreateOrgTest extends Example {
 	@Test(groups = "smoke", retryAnalyzer = ListenersUtility.RetryAnalyser.class)
 	public void createorgTest() throws InterruptedException, IOException {

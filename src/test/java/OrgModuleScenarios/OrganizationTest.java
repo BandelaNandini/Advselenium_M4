@@ -21,12 +21,10 @@ import POMUtilities.HomePage;
 import POMUtilities.OrgInfoPage;
 import POMUtilities.OrganizationPage;
 
-
 public class OrganizationTest extends Baseclass {
 
 	@Test(groups = "smoke", retryAnalyzer = ListenersUtility.RetryAnalyser.class)
 	public void createorgTest() throws InterruptedException, IOException {
-		WebDriver driver = UtilityClassObject.getDriver();
 
 		// Fetch the random number
 		JavaUtility jutil = new JavaUtility();

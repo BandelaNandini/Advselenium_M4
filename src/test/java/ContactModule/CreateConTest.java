@@ -20,12 +20,11 @@ import POMUtilities.ContactInfoPage;
 import POMUtilities.ContactsPage;
 import POMUtilities.CreateContactPage;
 import POMUtilities.HomePage;
-@Listeners(ListenersUtility.ListenersImp.class)
 public class CreateConTest extends Example {
 
 	@Test(groups = "smoke", retryAnalyzer = ListenersUtility.RetryAnalyser.class)
 	public void createconTest() throws InterruptedException, IOException {
-        System.out.println(driver);
+   
 		// Fetch the random number
 		JavaUtility jutil = new JavaUtility();
 		int rnum = jutil.generateRandomNumber();
@@ -78,7 +77,6 @@ public class CreateConTest extends Example {
 		Assert.assertEquals(verifyLastname, lastname, "Validating lastname in createConTest");
 		UtilityClassObject.getTest().log(Status.PASS, "Validated Lastname using Hard Assert");
 
-		Assert.fail();
 		// Identify contact tab and click on it
 		homepp.getContTab();
 		UtilityClassObject.getTest().log(Status.INFO, "Clicked on contact tab");

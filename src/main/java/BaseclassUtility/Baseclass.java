@@ -29,6 +29,7 @@ public class Baseclass {
 	public DatabaseUtility dutil = new DatabaseUtility();
 	public WebdriverUtility wutil = new WebdriverUtility();
 	public PropertyFileUtility putil = new PropertyFileUtility();
+	public WebDriver driver=null;
 
 	@BeforeSuite(alwaysRun = true)
 	public void connectToDB() throws SQLException {
@@ -41,11 +42,10 @@ public class Baseclass {
 		Reporter.log("Configuration of Parallel Execution", true);
 	}
 
-	@Parameters("browser")
+//	@Parameters("browser")
 	@BeforeClass(alwaysRun = true)
-	public void launchTheBrowser(String browser) throws IOException {
-		WebDriver driver;
-//		String browser = putil.fetchDataFromPropFile("browser");
+	public void launchTheBrowser() throws IOException {
+		String browser = putil.fetchDataFromPropFile("browser");
 		if (browser.equals("chrome"))
 			driver = new ChromeDriver();
 		else if (browser.equals("edge"))
@@ -62,7 +62,6 @@ public class Baseclass {
 
 	@BeforeMethod(alwaysRun = true)
 	public void login() throws IOException {
-		WebDriver driver = UtilityClassObject.getDriver();
 
 		String url = putil.fetchDataFromPropFile("url");
 		String timeouts = putil.fetchDataFromPropFile("timeouts");
@@ -88,7 +87,6 @@ public class Baseclass {
 
 	@AfterMethod(alwaysRun = true)
 	public void logout() {
-		WebDriver driver = UtilityClassObject.getDriver();
 
 		HomePage homepp = new HomePage(driver);
 		homepp.logout(driver);
@@ -98,7 +96,6 @@ public class Baseclass {
 
 	@AfterClass(alwaysRun = true)
 	public void quitTheBrowser() {
-		WebDriver driver = UtilityClassObject.getDriver();
 
 		wutil.quitTheBrowser(driver);
 		Reporter.log("Closed Browser", true);
