@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="3" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="ListenersUtility.ListenersImp"/>
+  </listeners>
+  <test thread-count="3" parallel="tests" name="Test_firefox(failed)">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="OrgModuleScenarios.OrganizationTest">
+        <methods>
+          <include name="DisConnectToDB"/>
+          <include name="launchTheBrowser"/>
+          <include name="configParallelExe"/>
+          <include name="login"/>
+          <include name="CloseParallelExe"/>
+          <include name="createorgTest"/>
+          <include name="quitTheBrowser"/>
+          <include name="connectToDB"/>
+          <include name="createOrg_PhnoTest"/>
+          <include name="createorgIndType_Test"/>
+          <include name="logout"/>
+        </methods>
+      </class> <!-- OrgModuleScenarios.OrganizationTest -->
+      <class name="ContactModuleScenarios.ContactTest">
+        <methods>
+          <include name="DisConnectToDB"/>
+          <include name="launchTheBrowser"/>
+          <include name="configParallelExe"/>
+          <include name="login"/>
+          <include name="CloseParallelExe"/>
+          <include name="connectToDB"/>
+          <include name="quitTheBrowser"/>
+          <include name="createcon_orgTest"/>
+          <include name="logout"/>
+        </methods>
+      </class> <!-- ContactModuleScenarios.ContactTest -->
+    </classes>
+  </test> <!-- Test_firefox(failed) -->
+</suite> <!-- Failed suite [Suite] -->
